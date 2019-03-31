@@ -6,7 +6,7 @@
 # Website: https://github.com/v3nt4n1t0
 #
 #
-# Description: Script in PowerShell to detect vulnerable versions of NVIDIA Graphics Driver and GeForce Experience in a Local Machine. 
+# Description: Script in PowerShell to detect vulnerable versions of NVIDIA Graphics Driver and GeForce Experience in a Windows Local Machine. 
 #
 # CVEs: CVE‑2019‑5665 through CVE‑2019‑5671 and previous. CVE‑2019‑5674 and previous
 # 
@@ -36,15 +36,15 @@ if($tipo.AdapterCompatibility -like '*NVIDIA*')
     
     if($gpu.Caption -like '*Geforce*') {
         if($version -lt 4.1917){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 419.17 o higher"}
-        else{Write-Host -NoNewline " $machine -> Non-vulnerable drivers"}
+        else{Write-Host -NoNewline " $machine -> Non-vulnerable NVIDIA drivers"}
     }
     elseif(($gpu.Caption -like '*Quadro*') -or ($gpu.Caption -like '*NVS*')){
         if($version -lt 4.1917){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 419.17 o higher"}
-        else{Write-Host -NoNewline " $machine -> Non-vulnerable drivers"}
+        else{Write-Host -NoNewline " $machine -> Non-vulnerable NVIDIA drivers"}
     }
     elseif($gpu.Caption -like '*Tesla*'){
         if($version -lt 4.1229){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 419.17 o higher"}
-        else{Write-Host -NoNewline " $machine -> Non-vulnerable drivers"}
+        else{Write-Host -NoNewline " $machine -> Non-vulnerable NVIDIA drivers"}
     }
 
     ls HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall | ForEach-Object -Process {       
