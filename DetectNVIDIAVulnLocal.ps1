@@ -43,7 +43,7 @@ if($tipo.AdapterCompatibility -like '*NVIDIA*')
         else{Write-Host -NoNewline " $machine -> Non-vulnerable NVIDIA drivers"}
     }
     elseif($gpu.Caption -like '*Tesla*'){
-        if($version -lt 4.1229){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 419.17 o higher"}
+        if($version -lt 4.1229){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 412.29 o higher"}
         else{Write-Host -NoNewline " $machine -> Non-vulnerable NVIDIA drivers"}
     }
 
