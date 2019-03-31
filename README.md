@@ -13,11 +13,11 @@ CVEs: CVE‑2019‑5665 through CVE‑2019‑5671 and previous. CVE‑2019‑567
 
 ## Usage: 
 
-PS E:\Pruebas C# PowerShell> .\DetectNVIDIAVulnDomain.ps1
+PS E:\Pruebas C# PowerShell> .\DetectNVIDIAVulnLocal.ps1
 
 or
 
-PS C:\prueba> powershell.exe -ExecutionPolicy Bypass -File 'E:\Pruebas C# PowerShell\DetectNVIDIAVulnDomain.ps1'
+PS C:\prueba> powershell.exe -ExecutionPolicy Bypass -File 'E:\Pruebas C# PowerShell\DetectNVIDIAVulnLocal.ps1'
 
 
 You can try differents methods.
