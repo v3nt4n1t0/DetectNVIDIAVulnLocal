@@ -35,16 +35,16 @@ if($tipo.AdapterCompatibility -like '*NVIDIA*')
     $version = $gpuversion.DriverVersion.Substring($gpuversion.DriverVersion.Length - 6, 6)
     
     if($gpu.Caption -like '*Geforce*') {
-        if($version -lt 4.1917){Write-Host -ForegroundColor Red -NoNewline "$machine -> Vulnerable drivers! Update drivers to version 419.17 o higher"}
-        else{Write-Host -NoNewline "$machine-> Non-vulnerable drivers"}
+        if($version -lt 4.1917){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 419.17 o higher"}
+        else{Write-Host -NoNewline " $machine-> Non-vulnerable drivers"}
     }
     elseif(($gpu.Caption -like '*Quadro*') -or ($gpu.Caption -like '*NVS*')){
-        if($version -lt 4.1917){Write-Host -ForegroundColor Red -NoNewline "$machine -> Vulnerable drivers! Update drivers to version 419.17 o higher"}
-        else{Write-Host -NoNewline "$machine-> Non-vulnerable drivers"}
+        if($version -lt 4.1917){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 419.17 o higher"}
+        else{Write-Host -NoNewline " $machine-> Non-vulnerable drivers"}
     }
     elseif($gpu.Caption -like '*Tesla*'){
-        if($version -lt 4.1229){Write-Host -ForegroundColor Red -NoNewline "$machine -> Vulnerable drivers! Update drivers to version 419.17 o higher"}
-        else{Write-Host -NoNewline "$machine-> Non-vulnerable drivers"}
+        if($version -lt 4.1229){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 419.17 o higher"}
+        else{Write-Host -NoNewline " $machine-> Non-vulnerable drivers"}
     }
 
     ls HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall | ForEach-Object -Process {       
@@ -65,4 +65,4 @@ if($tipo.AdapterCompatibility -like '*NVIDIA*')
     elseif($SbStrversion -lt 3.18){Write-Host -NoNewline " | "; Write-Host -ForegroundColor Red "GeForce Experience is vulnerable! Update to version 3.18.0.94 or higher`n"}
     else{" | NVIDIA GeForce Experience is not vulnerable`n"}
 }
-else{ "`n $machine does not have NVIDIA GPU or does not contain NVIDIA drivers"}
+else{ " $machine does not have NVIDIA GPU or does not contain NVIDIA drivers`n"}
