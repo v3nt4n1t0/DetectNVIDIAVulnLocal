@@ -62,7 +62,7 @@ if($tipo.AdapterCompatibility -like '*NVIDIA*')
     }
 
     if(!$GFExperienceVersion){" | Does not have NVIDIA GeForce Experience installed`n" }
-    elseif($SbStrversion -lt 3.19){Write-Host -NoNewline " | "; Write-Host -ForegroundColor Red "GeForce Experience is vulnerable! Update to version 3.18.0.94 or higher`n"}
+    elseif($SbStrversion -lt 3.19){Write-Host -NoNewline " | "; Write-Host -ForegroundColor Red "GeForce Experience is vulnerable! Update to version 3.19.0.94 or higher`n"}
     else{" | NVIDIA GeForce Experience is not vulnerable`n"}
 }
 else{ " $machine does not have NVIDIA GPU or does not contain NVIDIA drivers`n"}
