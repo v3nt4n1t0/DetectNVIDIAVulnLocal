@@ -25,7 +25,7 @@
 ################################################################################################################################################## 
 
 
-$machine = (Get-WmiObject -class win32_NetworkAdapterConfiguration -Filter 'ipenabled = "true"').ipaddress + "," +[Environment]::GetEnvironmentVariable("ComputerName")
+$machine = [Environment]::GetEnvironmentVariable("ComputerName")
 $tipo=Get-WmiObject win32_VideoController -Property AdapterCompatibility
 echo ""
 if($tipo.AdapterCompatibility -like '*NVIDIA*') 
