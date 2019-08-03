@@ -21,6 +21,10 @@
 # PS E:\Pruebas C# PowerShell> .\DetectNVIDIAVulnLocal.ps1
 #
 # PS C:\prueba> powershell.exe -ExecutionPolicy Bypass -File 'E:\Pruebas C# PowerShell\DetectNVIDIAVulnLocal.ps1'
+#
+# (Recommended: Save the following command and execute it whenever you want. You do not need to download the script. You will always run the most updated version of the script)
+#
+# PS C:\prueba> iex(New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/v3nt4n1t0/DetectNVIDIAVulnLocal/master/DetectNVIDIAVulnLocal.ps1")
 # 
 ################################################################################################################################################## 
 
@@ -43,7 +47,7 @@ if($tipo.AdapterCompatibility -like '*NVIDIA*')
         else{Write-Host -NoNewline " $machine -> Non-vulnerable NVIDIA drivers"}
     }
     elseif($gpu.Caption -like '*Tesla*'){
-        if($version -lt 4.2525){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 425.25 or higher"}
+        if($version -lt 4.2526){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to the latest version (Available the week of August 12, 2019)"}
         else{Write-Host -NoNewline " $machine -> Non-vulnerable NVIDIA drivers"}
     }
 
