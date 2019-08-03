@@ -8,7 +8,7 @@
 #
 # Description: Script in PowerShell to detect vulnerable versions of NVIDIA Graphics Driver and GeForce Experience in a Windows Local Machine. 
 #
-# CVEs: CVE‑2019‑5678 and previous.
+# CVEs: CVE‑2019‑5687 and previous.
 # 
 # 
 # Considerations: 
@@ -35,11 +35,11 @@ if($tipo.AdapterCompatibility -like '*NVIDIA*')
     $version = $gpuversion.DriverVersion.Substring($gpuversion.DriverVersion.Length - 6, 6)
     
     if($gpu.Caption -like '*Geforce*') {
-        if($version -lt 4.3064){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 430.64 or higher"}
+        if($version -lt 4.3160){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 431.60 or higher"}
         else{Write-Host -NoNewline " $machine -> Non-vulnerable NVIDIA drivers"}
     }
     elseif(($gpu.Caption -like '*Quadro*') -or ($gpu.Caption -like '*NVS*')){
-        if($version -lt 4.3064){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 430.64 or higher"}
+        if($version -lt 4.3170){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 431.70 or higher"}
         else{Write-Host -NoNewline " $machine -> Non-vulnerable NVIDIA drivers"}
     }
     elseif($gpu.Caption -like '*Tesla*'){
