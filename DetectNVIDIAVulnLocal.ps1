@@ -1,33 +1,32 @@
-#
-# This software is provided under under the BSD 3-Clause License.
-# See the accompanying LICENSE file for more information.
-#
-# Author: Roberto Berrio (@v3nt4n1t0)
-# Website: https://github.com/v3nt4n1t0
-#
-#
-# Description: Script in PowerShell to detect vulnerable versions of NVIDIA Graphics Driver and GeForce Experience in a Windows Local Machine. 
-#
-# CVEs: CVE‑2019‑5687 and previous.
-# 
-# 
-# Considerations: 
-#
-# - Run the script with the Unrestricted or Bypass execution policies from Domain Controller
-#
-#
-# Usage: 
-#
-# PS E:\Pruebas C# PowerShell> .\DetectNVIDIAVulnLocal.ps1
-#
-# PS C:\prueba> powershell.exe -ExecutionPolicy Bypass -File 'E:\Pruebas C# PowerShell\DetectNVIDIAVulnLocal.ps1'
-#
-# (Recommended: Save the following command and execute it whenever you want. You do not need to download the script. You will always run the most updated version of the script)
-#
-# PS C:\prueba> iex(New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/v3nt4n1t0/DetectNVIDIAVulnLocal/master/DetectNVIDIAVulnLocal.ps1")
-# 
-################################################################################################################################################## 
+<#
+.SYNOPSIS
+    NVIDIA Vulnerability Scanner for Local Machine
+    
+.DESCRIPTION
+    Script in PowerShell to detect vulnerable versions of NVIDIA Graphics Driver and GeForce Experience in a Windows Local Machine.
 
+    CVEs: CVE‑2019‑5687 and previous.
+        
+.NOTES
+    File Name      : DetectNVIDIAVulnDomain.ps1
+    Author         : Author: Roberto Berrio (@v3nt4n1t0)
+    Website        : https://github.com/v3nt4n1t0
+
+    This software is provided under under the BSD 3-Clause License.
+    See the accompanying LICENSE file for more information.
+    
+.LINK
+    https://github.com/v3nt4n1t0/DetectNVIDIAVulnLocal
+    
+.EXAMPLE
+    .\DetectNVIDIAVulnLocal.ps1
+    
+.EXAMPLE
+    powershell.exe -ExecutionPolicy Bypass -File 'E:\Pruebas C# PowerShell\DetectNVIDIAVulnLocal.ps1'
+    
+.EXAMPLE
+    iex(New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/v3nt4n1t0/DetectNVIDIAVulnLocal/master/DetectNVIDIAVulnLocal.ps1")
+#>
 
 $machine = [Environment]::GetEnvironmentVariable("ComputerName")
 $tipo=Get-WmiObject win32_VideoController -Property AdapterCompatibility
