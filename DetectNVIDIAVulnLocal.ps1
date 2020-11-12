@@ -38,15 +38,15 @@ if($tipo.AdapterCompatibility -like '*NVIDIA*')
     $version = $gpuversion.DriverVersion.Substring($gpuversion.DriverVersion.Length - 6, 6)
     
     if($gpu.Caption -like '*Geforce*') {
-        if($version -lt 4.3160){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 431.60 or higher"}
+        if($version -lt 4.5671){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 431.60 or higher"}
         else{Write-Host -NoNewline " $machine -> Non-vulnerable NVIDIA drivers"}
     }
     elseif(($gpu.Caption -like '*Quadro*') -or ($gpu.Caption -like '*NVS*')){
-        if($version -lt 4.3170){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 431.70 or higher"}
+        if($version -lt 4.5671){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to version 431.70 or higher"}
         else{Write-Host -NoNewline " $machine -> Non-vulnerable NVIDIA drivers"}
     }
     elseif($gpu.Caption -like '*Tesla*'){
-        if($version -lt 4.2600){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to the latest version"}
+        if($version -lt 4.5239){Write-Host -ForegroundColor Red -NoNewline " $machine -> Vulnerable drivers! Update drivers to the latest version"}
         else{Write-Host -NoNewline " $machine -> Non-vulnerable NVIDIA drivers"}
     }
 
@@ -65,7 +65,7 @@ if($tipo.AdapterCompatibility -like '*NVIDIA*')
     }
 
     if(!$GFExperienceVersion){" | Does not have NVIDIA GeForce Experience installed`n" }
-    elseif($SbStrversion -lt 3.20){Write-Host -NoNewline " | "; Write-Host -ForegroundColor Red "GeForce Experience is vulnerable! Update to version 3.20.2 or higher`n"}
+    elseif($SbStrversion -lt 3.20){Write-Host -NoNewline " | "; Write-Host -ForegroundColor Red "GeForce Experience is vulnerable! Update to version 3.20.5.70 or higher`n"}
     else{" | NVIDIA GeForce Experience is not vulnerable`n"}
 }
 else{ " $machine does not have NVIDIA GPU or does not contain NVIDIA drivers`n"}
